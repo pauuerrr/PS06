@@ -20,9 +20,10 @@ namespace PS06
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method gets called by the runtime. Use this method to add services to the container.Dodanie uzycia middleware do klasy startup
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddBrowserDetection();
             services.AddRazorPages();
         }
 
@@ -46,6 +47,8 @@ namespace PS06
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware<CheckBrowserMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

@@ -20,13 +20,13 @@ namespace PS06
         {
             var browser = detector.Browser;
 
-            if ((browser.Name == BrowserNames.Edge) || (browser.Name == BrowserNames.EdgeChromium) || (browser.Name == BrowserNames.InternetExplorer))
+            if ((browser.Name == BrowserNames.Edge)|| (browser.Name == BrowserNames.EdgeChromium) || (browser.Name == BrowserNames.InternetExplorer))
             {
                 await httpContext.Response.WriteAsync("<p>Przeglądarka nie jest obsługiwana</p>");
             }
             else
             {
-                await next(httpContext);
+                await this.next.Invoke(httpContext);
             }
         }
     }
