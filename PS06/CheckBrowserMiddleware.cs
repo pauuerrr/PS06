@@ -8,6 +8,11 @@ namespace PS06
 {
     public class CheckBrowserMiddleware
     {
-        private RequestDelegate _next;
+        private RequestDelegate next;
+
+        public CheckBrowserMiddleware(RequestDelegate next)
+        {
+            this.next = next;
+        }
     }
 }
