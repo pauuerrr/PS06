@@ -22,7 +22,7 @@ namespace PS06
 
             if ((browser.Name == BrowserNames.Edge)|| (browser.Name == BrowserNames.EdgeChromium) || (browser.Name == BrowserNames.InternetExplorer))
             {
-                await httpContext.Response.WriteAsync("<p>Przeglądarka nie jest obsługiwana</p>");
+                await httpContext.Response.WriteAsync("<p>Przegladarka nie jest obsugiwana</p>");
             }
             else
             {
